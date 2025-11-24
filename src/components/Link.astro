@@ -23,26 +23,16 @@ const { data } = Astro.props;
 
 	}
 	.icon {
-		width: 100px;
-		height: 64px;
+		width: 120px;
+		height: 120px;
 		object-fit: contain;
-		align-items: center;
-		flex-direction: column;
+		display: block;
 	}
 
 	.link-item:focus-visible,
 	.link-item:hover {
 		transform: translateY(-4px);
 		box-shadow: 0 10px 24px rgba(0,0,0,0.08);
-		---
-		const{data}=Astro.props;
-		import Image from "astro/components/Image.astro";
-		---
-		<p></p>
-		<Image src={data.img} alt={""}>  </Image>
-		<a href={data.url}>{data.title}</a>
-		display: block;
-
-
+		outline: none;
 	}
 
