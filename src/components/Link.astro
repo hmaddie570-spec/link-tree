@@ -1,0 +1,48 @@
+---
+const { data } = Astro.props;
+---
+
+<a class="link-item" href={data.url} target="_blank" rel="noopener noreferrer">
+		{/** Normalize image source: support string or Astro image object */}
+		{
+			(() => {
+				const imgSrc = typeof data.img === 'string' ? data.img : (data.img && (data.img.src || data.img.default || data.img.url));
+				return <img class="icon" src={imgSrc} alt={data.title} loading="lazy" />;
+			})()
+		}
+</a>
+
+<style>
+	.link-item {
+		display: inline-block;
+		padding: 0.25rem;
+		border-radius: 12px;
+		background: var(--link-bg, transparent);
+		text-decoration: none;
+		transition: transform 0.12s ease, box-shadow 0.12s ease;    
+
+	}
+	.icon {
+		width: 100px;
+		height: 64px;
+		object-fit: contain;
+		align-items: center;
+		flex-direction: column;
+	}
+
+	.link-item:focus-visible,
+	.link-item:hover {
+		transform: translateY(-4px);
+		box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+		---
+		const{data}=Astro.props;
+		import Image from "astro/components/Image.astro";
+		---
+		<p></p>
+		<Image src={data.img} alt={""}>  </Image>
+		<a href={data.url}>{data.title}</a>
+		display: block;
+
+
+	}
+

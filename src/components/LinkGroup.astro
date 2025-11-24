@@ -1,0 +1,48 @@
+---
+import Link from "./Link.astro";
+import BehanceImage from "@assets/images/Behance.png";
+import InstaImage from "@assets/images/Instagram.png";
+import Image from "/workspaces/link-tree/src/assets/images/LinkedIn .png";
+import YoutubeImage from "@assets/images/Youtube.png";
+import Padlet from "@assets/images/Padlet.png";
+
+
+const links = [
+    {title:"Behance",
+    url:"https://www.behance.net/madisonhickey1",
+    img: BehanceImage },
+    {title:"LinkedIn",
+    url:"https://www.linkedin.com/in/madison-hickey-92aa91383/" 
+    ,img: Image },
+    {title:"Youtube",
+    url:"https://www.youtube.com/@maddieh1184" ,
+    img: YoutubeImage },
+     {title:"Instagram",
+     img: InstaImage ,
+    url:"https://www.instagram.com/artbym.addie/" },
+     {title:"Padlet",
+    url:"https://padlet.com/dashboard?mobile_page=Collection&filter=combined_recents" ,
+    img: Padlet },
+    
+];
+---
+
+<div class="link-row">
+  {links.map(function(link){
+    return <Link data={link}/>
+  })}
+</div>
+
+<style>
+  .link-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+</style>
+
+    
