@@ -2,6 +2,9 @@
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/Container.astro";
 import LinkGroup from "@components/LinkGroup.astro";
+import Teeth from "/workspaces/link-tree/src/assets/images/TopTeeth.png";
+import Teeth2 from "/workspaces/link-tree/src/assets/images/BottomTeeth.png";
+
 ---
 
 <Layout title="Maddie's Linktree">
@@ -70,12 +73,15 @@ import LinkGroup from "@components/LinkGroup.astro";
 </div>
    
   </svg>
+  <img src={Teeth.src} alt="Top Teeth" class="header-image"/>
+  <LinkGroup/>
 </header>
   
   <Container>
     <h1>Maddie's Linktree</h1>
-    <LinkGroup/>
+
   </Container>
+  <img src={Teeth2.src} alt="Bottom Teeth" class="header-image"/>
 </Layout>
 
 
@@ -100,6 +106,16 @@ import LinkGroup from "@components/LinkGroup.astro";
     top: 0;
     left: 0;
     z-index: -1;
+  }
+
+  .header-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0;
+	margin-top: 150px;
+	left: 20px;
+
   }
 
   h1 {
