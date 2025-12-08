@@ -17,22 +17,56 @@ const { data } = Astro.props;
 		display: inline-block;
 		padding: 0.25rem;
 		border-radius: 12px;
-		background: var(--link-bg, transparent);
+		background: linear-gradient(135deg, rgba(252, 43, 154, 0.7), rgba(255, 105, 180, 0.5));
+		backdrop-filter: blur(10px);
+		-webkit-backdrop-filter: blur(10px);
+		border: 2px solid rgba(255, 20, 147, 0.8);
+		box-shadow: 0 8px 32px rgba(255, 20, 147, 0.3);
 		text-decoration: none;
-		transition: transform 0.12s ease, box-shadow 0.12s ease;    
+		transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);    
 
 	}
 	.icon {
-		width: 120px;
-		height: 120px;
+		width: 95px;
+		height: 95px;
 		object-fit: contain;
 		display: block;
+		filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+		transition: transform 0.3s ease;
 	}
 
 	.link-item:focus-visible,
 	.link-item:hover {
-		transform: translateY(-4px);
-		box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+		transform: translateY(-10px) scale(1.1) rotate(2deg);
+		box-shadow: 0 20px 40px rgba(255, 20, 147, 0.5);
 		outline: none;
+		background: linear-gradient(135deg, rgba(252, 43, 154, 0.85), rgba(255, 105, 180, 0.65));
+		border-color: rgba(255, 20, 147, 1);
 	}
 
+	.link-item:hover .icon {
+		transform: scale(1.1) rotate(-5deg);
+	}
+
+	@media (max-width: 768px) {
+		.icon {
+			width: 55px;
+			height: 55px;
+		}
+		
+		.link-item {
+			padding: 0.5rem;
+		}
+	}
+
+	@media (max-width: 480px) {
+		.icon {
+			width: 45px;
+			height: 45px;
+		}
+		
+		.link-item {
+			padding: 0.35rem;
+		}
+	}
+</style>

@@ -2,37 +2,20 @@
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/Container.astro";
 import LinkGroup from "@components/LinkGroup.astro";
-import Teeth from "/workspaces/link-tree/src/assets/images/Teeth.png";
-import Teeth2 from "/workspaces/link-tree/src/assets/images/Teeth2.png";
+import Teeth from "/workspaces/link-tree/src/assets/images/TopTeeth.png";
+import Teeth2 from "/workspaces/link-tree/src/assets/images/BottomTeeth.png";
 import Cat from "/workspaces/link-tree/src/assets/images/Cat.png";
 import Smiski from "/workspaces/link-tree/src/assets/images/Smiski.png";
 import Kirby from "/workspaces/link-tree/src/assets/images/Kirby.png";
 import Cat2 from "/workspaces/link-tree/src/assets/images/Cat2.png";
-import Duck from "/workspaces/link-tree/src/assets/images/Duck.png";
-import Icon from "/workspaces/link-tree/src/assets/images/Icon.png";
-import Face from "/workspaces/link-tree/src/assets/images/Face.png";
-import Donut from "/workspaces/link-tree/src/assets/images/Donut.png";
-import Star from "/workspaces/link-tree/src/assets/images/Star.png";
-import Diamond from "/workspaces/link-tree/src/assets/images/Diamond.png";
-import Poke from "/workspaces/link-tree/src/assets/images/Pokeball.png";
-import Fortnite from "/workspaces/link-tree/src/assets/images/Fortnite.png";
-import Bellbag from "/workspaces/link-tree/src/assets/images/Bellbag.png";
-import Miku from "/workspaces/link-tree/src/assets/images/Miku.png";
-import Fish from "/workspaces/link-tree/src/assets/images/Fish.png";
-import Shroom from "/workspaces/link-tree/src/assets/images/Shroom.png";
-import Psyduck from "/workspaces/link-tree/src/assets/images/PsyDuck.png"
-import Strawberry from "/workspaces/link-tree/src/assets/images/Strawberry.png"
-import Bunny from "/workspaces/link-tree/src/assets/images/Bunny.png"
+import Duck
+
+
 ---
 
-<head>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Mochiy+Pop+One&family=MuseoModerno:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-</head>
 <Layout title="Maddie's Linktree">
   <canvas id="stars"></canvas>
-  
+  <header class="site-header">
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 132.29166 132.29167"
@@ -40,7 +23,7 @@ import Bunny from "/workspaces/link-tree/src/assets/images/Bunny.png"
     width="120"
   ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 132.29166 132.29167" height="500" width="500">
 	<defs>
-
+		<!-- SQUIGLY FILTERS -->
 		<filter id='squiggly-0'>
 			<feturbulence basefrequency='0.02' id='turbulence' numoctaves='3' result='noise' seed='0'></feturbulence>
 			<fedisplacementmap id='displacement' in2='noise' in='SourceGraphic' scale='2'></fedisplacementmap>
@@ -62,13 +45,13 @@ import Bunny from "/workspaces/link-tree/src/assets/images/Bunny.png"
 			<fedisplacementmap in2='noise' in='SourceGraphic' scale='1'></fedisplacementmap>
 		</filter>
 
-		
+		<!-- 	SVG DEFAULT FILTER	 -->
 		<filter id="filter" style="color-interpolation-filters:sRGB;">
 			<feTurbulence result="turbulence" baseFrequency="0.01 0.025" seed="512" numOctaves="10" type="fractalNoise" />
 			<feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="0" in2="turbulence" in="SourceGraphic" />
 		</filter>
 
-		
+		<!-- 	SVG  MORPHS -->
 		<g id="morphs">
 			<path d="m 27.662178,23.956541 c -0.988803,0 -4.510813,-1.422006 -5.932819,0 -3.639494,3.639493 3.461844,35.401474 0,38.863318 -1.262496,1.262496 -3.906247,1.262496 -5.168743,0 -3.461844,-3.461844 3.649377,-35.213941 0,-38.863318 -1.431259,-1.431259 -4.404047,-1.573718 -5.977765,0 -5.9125287,5.912532 -5.9125287,78.466059 0,84.378589 1.573718,1.57372 4.543045,1.43472 5.977765,0 3.689796,-3.6898 -3.488538,-36.048968 0,-39.537506 1.255841,-1.255841 3.867957,-1.255841 5.123798,0 3.488538,3.488538 -3.689796,35.847706 0,39.537506 1.43472,1.43472 4.404047,1.57372 5.977764,0 5.912531,-5.91253 0.01293,-69.798011 0.01293,-83.861109" id="path1002" />
 			<path d="m 53.860935,23.956541 c -2.584372,0 -11.888395,-3.617837 -15.506232,0 -8.439406,8.439407 -8.439406,75.939182 0,84.378589 3.617837,3.61784 13.526314,1.97992 15.506232,0 1.229317,-1.22932 1.10957,-4.8682 0,-5.97777 -1.394242,-1.39424 -6.137561,0.82885 -9.438576,0 -2.016796,-6.505543 -3.566554,-28.889903 0,-32.456458 1.672616,-1.672616 4.815546,0.322606 7.371078,0 2.949902,-1.792985 1.981702,-6.864212 0,-7.081043 -2.813512,-0.01963 -5.703898,1.66718 -7.371078,0 -3.519026,-3.519027 -3.64238,-26.557095 0,-32.840608 2.899882,-0.92597 8.041426,1.39715 9.438576,0 1.116056,-1.116055 0,-5.018925 0,-6.02271" id="path1004" />
@@ -98,35 +81,17 @@ import Bunny from "/workspaces/link-tree/src/assets/images/Bunny.png"
   </svg>
   <img src={Teeth.src} alt="Top Teeth" class="header-image"/>
    <Container>
-    <h1 class="site-title" id="siteTitle"></h1>
+    <h1 class="site-title">Maddie's Linktree</h1>
   <LinkGroup/>
   </Container>
-  <header class="site-header">
 </header>
   
   <footer class="site-footer">
     <img src={Teeth2.src} alt="Bottom Teeth" class="footer-image"/>
-    <img src={Face.src} alt="Face" class="face-image" id="faceImage"/>
-
     <img src={Cat.src} alt="Cat" class="cat-image" id="catImage"/>
 	<img src={Kirby.src} alt="Kirby" class="kirby-image" id="kirbyImage"/>
 	<img src={Smiski.src} alt="Smiski" class="smiski-image" id="smiskiImage"/>
 <img src={Cat2.src} alt="Cat2" class="cat2-image" id="cat2Image"/>
-<img src={Icon.src} alt="icon" class="icon-image" id="Icon"/>
-<img src={Donut.src} alt="Donut" class="donut-image" id="donutImage"/>
-<img src={Star.src} alt="Star" class="star-image" id="starImage"/>
-<img src={Diamond.src} alt="Diamond" class="diamond-image" id="diamondImage"/>
-<img src={Poke.src} alt="Pokeball" class="poke-image" id="pokeImage"/>
-<img src={Fortnite.src} alt="Fortnite" class="fortnite-image" id="fortniteImage"/>
-<img src={Bellbag.src} alt="Bellbag" class="bellbag-image" id="bellbagImage"/>
-<img src={Miku.src} alt="Miku" class="miku-image" id="mikuImage"/>  
-<img src={Fish.src} alt="Fish" class="fish-image" id="fishImage"/>
-<img src={Shroom.src} alt="Shroom" class="shroom-image" id="shroomImage"/>
-<img src={Psyduck.src} alt="Psyduck" class="psyduck-image" id="psyduckImage"/>
-<img src={Strawberry.src} alt="Strawberry" class="strawberry-image" id="strawberryImage"/>
-<img src=""
-
-
   </footer>
 </Layout>
 
@@ -134,40 +99,6 @@ import Bunny from "/workspaces/link-tree/src/assets/images/Bunny.png"
 <script is:inline src="/scripts/stars.js"></script>
 
 <script>
-  
-  const duckCursor = document.createElement('img');
-  duckCursor.src = '/src/assets/images/Duck.png';
-  duckCursor.style.cssText = `
-    position: fixed;
-    width: 80px;
-    height: auto;
-    pointer-events: none;
-    z-index: 10000;
-    transform: translate(0, 0);
-  `;
-  document.body.appendChild(duckCursor);
-  document.body.style.cursor = 'auto';
-
-  let mouseX = 0;
-  let mouseY = 0;
-  let duckX = 0;
-  let duckY = 0;
-
-  document.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-  });
-
-  function animateDuck() {
-    duckX += (mouseX - duckX) * 0.15;
-    duckY += (mouseY - duckY) * 0.15;
-    duckCursor.style.left = duckX + 'px';
-    duckCursor.style.top = duckY + 'px';
-    requestAnimationFrame(animateDuck);
-  }
-
-  animateDuck();
-
   const smiskiImage = document.getElementById('smiskiImage');
   let rotationDegrees = 0;
   
@@ -204,30 +135,6 @@ import Bunny from "/workspaces/link-tree/src/assets/images/Bunny.png"
       }, 800);
     });
   }
-
- 
-  const titleText = "Maddie's Linktree";
-  const siteTitle = document.getElementById('siteTitle');
-  
-  if (siteTitle) {
-    siteTitle.innerHTML = titleText.split('').map(char => {
-      if (char === ' ') return '<span class="letter">&nbsp;</span>';
-      return `<span class="letter">${char}</span>`;
-    }).join('');
-
-    const letters = siteTitle.querySelectorAll('.letter');
-    letters.forEach(letter => {
-      letter.addEventListener('mouseenter', () => {
-        letter.style.color = '#FF1493';
-        letter.style.transform = 'scale(1.2)';
-      });
-      
-      letter.addEventListener('mouseleave', () => {
-        letter.style.color = '';
-        letter.style.transform = 'scale(1)';
-      });
-    });
-  }
 </script>
 
 <style>
@@ -257,15 +164,12 @@ import Bunny from "/workspaces/link-tree/src/assets/images/Bunny.png"
     height: auto;
     display: block;
     margin: 0;
-    margin-top: -100px;
-    margin-bottom: -200px;
-    position: relative;
-    z-index: 1;
+	margin-top: -150px;
   }
 
   .site-footer {
     width: 100%;
-    margin-top: -100px;
+    margin-top: 2rem;
     position: relative;
   }
 
@@ -285,13 +189,8 @@ import Bunny from "/workspaces/link-tree/src/assets/images/Bunny.png"
     height: auto;
     z-index: 10;
 	top: -300px;
-    pointer-events: auto;
-    animation: cat-pop 3s ease-in-out infinite;
-    transition: transform 0.5s ease;
-  }
-
-  .cat-image:hover {
-    transform: rotate(360deg) scale(1.1);
+    pointer-events: none;
+    animation: cat-pop 2s ease-in-out infinite;
   }
 
   .smiski-image {
@@ -316,13 +215,8 @@ import Bunny from "/workspaces/link-tree/src/assets/images/Bunny.png"
     height: auto;
     z-index: 11;
     top: -270px;
-    pointer-events: auto;
+    pointer-events: none;
     animation: kirby-pop 3s ease-in-out infinite;
-    transition: transform 0.3s ease;
-  }
-
-  .kirby-image:hover {
-    transform: scale(1.2);
   }
   .cat2-image {
     position: absolute;
@@ -332,282 +226,11 @@ import Bunny from "/workspaces/link-tree/src/assets/images/Bunny.png"
     height: auto;
     z-index: 10;
     top: -40px;
-    pointer-events: auto;
-    transition: transform 0.3s ease;
-  }
-
-  .cat2-image:hover {
-    transform: rotate(360deg) scale(1.1);
-  }
-  .icon-image {
-    position: absolute;
-    bottom: 0;
-    left: 100px;
-    width: 200px;
-    height: auto;
-    z-index: 10;
-    top: -400px;
-    pointer-events: auto;
-    animation: icon-pop 3s ease-in-out infinite;
-    transition: transform 0.3s ease;
-  }
-  .face-image {
-    position: absolute;
-    bottom: 0;
-    left: px;
-    width: 200px;
-    height: auto;
-    z-index: 10;
-    top: -550px;
-    pointer-events: auto;
-    animation: face-spin 4s linear infinite;
-  }
-
-   .donut-image {
-    position: absolute;
-    bottom: 0;
-    right: 250px;
-    width: 300px;
-    height: auto;
-    z-index: 10;
-    top: -30px;
-    pointer-events: auto;
-    animation: donut-spin 8s linear infinite;
-  }
-    .star-image {
-      position: absolute;
-      bottom: 0;
-      left: 530px;
-      width: 150px;
-      height: auto;
-      z-index: 15;
-      top: -700px;
-      pointer-events: auto;
-      animation: star-sway 4s ease-in-out infinite;
-      transition: transform 0.5s ease;
-    }
-    .diamond-image {
-      position: absolute;
-      bottom: 0;
-      left: 760px;
-      width: 170px;
-      height: auto;
-      z-index: 15;
-      top: -710px;
-      pointer-events: auto;
-      animation: diamond-sway 4s ease-in-out infinite;
-      transition: transform 0.5s ease;
-    }
-    .poke-image {
-      position: absolute;
-      bottom: 0;
-      left: 980px;
-      width: 110px;
-      height: auto;
-      z-index: 15;
-      top: -710px;
-      pointer-events: auto;
-      animation: poke-bounce 3s ease-in-out infinite;
-      transition: transform 0.5s ease;
-
-    }
-    .fortnite-image {
-      position: absolute;
-      bottom: 0;
-      left: 345px;
-      width: 140px;
-      height: auto;
-      z-index: 15;
-      top: -720px;
-      pointer-events: auto;
-      animation: fortnite-flip 3s ease-in-out infinite;
-      transition: transform 0.5s ease;
-
-    }
-    .bellbag-image { 
-      position: absolute;
-      bottom: 0;
-      left: 580px;
-      width: 140px;
-      height: auto;
-      z-index: 10;
-      top: 180px;
-      pointer-events: auto;
-      animation: bellbag-wobble 3s ease-in-out infinite;
-      transition: transform 0.5s ease;
-
-    }
-    .fish-image {   
-      position: absolute;
-      bottom: 0;
-      left: 250px;
-      width: 120px;
-      height: auto;
-      z-index: 10;
-      top: -320px;
-      pointer-events: auto;
-      
-      transition: transform 0.5s ease;
-
-    }
-
-
-
-    .miku-image { 
-      position: absolute;
-      bottom: 0;
-      left: 740px;
-      width: 120px;
-      height: auto;
-      z-index: 10;
-      top: 180px;
-      pointer-events: auto;
-      animation: bellbag-wobble 3s ease-in-out infinite;
-      transition: transform 0.5s ease;
-
-    }
-    .shroom-image { 
-      position: absolute;
-      bottom: 0;
-      left: 250px;
-      width: 400px;
-      height: auto;
-      z-index: 10;
-      top: -120px;
-      pointer-events: auto;
-      animation: shroom-pop 4s ease-in-out infinite;
-      transition: transform 0.5s ease;
-    }
-    .psyduck-image { 
-      position: absolute;
-      bottom: 0;
-      right: 20px;
-      width: 200px;
-      height: auto;
-      z-index: 10;
-      top: -430px;
-      pointer-events: auto;
-      animation: shroom-pop 4s ease-in-out infinite;
-      transition: transform 0.5s ease;
-    }
-    .strawberry-image { 
-      position: absolute;
-      bottom: 0;
-      right: 260px;
-      width: 150px;
-      height: auto;
-      z-index: 10;
-      top: -370px;
-      pointer-events: auto;
-      animation: shroom-pop 4s ease-in-out infinite;
-      transition: transform 0.5s ease;
-    }
-
-   @keyframes shroom-pop {
-    0%, 100% {
-      transform:  rotate(-15deg);
-    }
-    50% {
-      transform:  rotate(15deg);
-    }
-  }
-
-
-    @keyframes bellbag-wobble {
-      0%, 100% {
-        transform: rotate(-15deg);
-      }
-      50% {
-        transform: rotate(15deg);
-      }
-    }
-
-
-
-
-
-
-    @keyframes fortnite-flip {
-      0%, 100% {
-        transform: rotate(20deg);
-      }
-      50% {
-        transform: rotate(-20deg);
-      }
-    }
-
-
-    @keyframes poke-bounce {
-      0%, 100% {
-        transform: rotate(-30deg);
-      }
-      50% {
-        transform: rotate(30deg);
-      }
-    }
-    
-
- @keyframes diamond-sway {
-      0%, 100% {
-        transform: rotate(50deg);
-      }
-      50% {
-        transform: rotate(-50deg);
-      }
-    }
-    
-
-    @keyframes star-sway {
-      0%, 100% {
-        transform: rotate(-30deg);
-      }
-      50% {
-        transform: rotate(30deg);
-      }
-    }
-
-  @keyframes donut-spin {
-    from {
-      transform: rotate(360deg);
-    }
-    to {
-      transform: rotate(0deg);
-    }
-  }
-
-
-  @keyframes face-spin {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
-
-  .icon-image:hover {
-    transform: scale(3.0);
-  }
-
-  @keyframes icon-pop {
-    0%, 100% {
-      transform: scale(1) rotate(-3deg);
-    }
-    50% {
-      transform: scale(1.05) rotate(3deg);
-    }
+    pointer-events: none;
+   
   }
 
   @keyframes cat-pop {
-    0%, 100% {
-      transform: scale(1) rotate(-3deg);
-    }
-    50% {
-      transform: scale(1.05) rotate(3deg);
-    }
-  }
-
-  @keyframes shroom-pop {
     0%, 100% {
       transform: scale(1) rotate(-3deg);
     }
@@ -682,25 +305,13 @@ import Bunny from "/workspaces/link-tree/src/assets/images/Bunny.png"
 		filter: url("#squiggly-4");
 	}
   }
-
 .site-title {
   text-align: center;
-  font-size: 3rem;
-  margin-top: -150px;
-  margin-bottom: 0.5rem;
-  font-family: 'Mochiy Pop One', sans-serif;
-}
-
-.site-title .letter {
-  display: inline-block;
-  transition: color 0.3s ease, transform 0.3s ease;
-  cursor: pointer;
-}
-
-.support {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  .support {
 	position: absolute;
 	right: 10px;
-  top: 100px;
 	bottom: 10px;
 	padding: 10px;
 	display: flex;
@@ -716,70 +327,5 @@ import Bunny from "/workspaces/link-tree/src/assets/images/Bunny.png"
 		}
 	}
   }
-
-  
-  @media (max-width: 768px) {
-    .site-title {
-      font-size: 1.3rem;
-      margin-top: -150px;
-      margin-bottom: 1rem;
-    }
-
-    .header-image {
-      margin-top: -80px;
-    }
-
-    
-    .cat-image, .shroom-image {
-      width: 250px;
-      left: -50px;
-      top: -150px;
-    }
-
-    .kirby-image, .smiski-image {
-      width: 100px;
-    }
-
-    .icon-image, .face-image, .star-image, .diamond-image,
-    .poke-image, .fortnite-image, .psyduck-image, .strawberry-image, .bunny-image {
-      display: none;
-    }
-
-    .donut-image {
-      width: 150px;
-      right: 50px;
-    }
-
-    .cat2-image {
-      width: 100px;
-      right: 300px;
-    }
-
-    .fish-image {
-      width: 80px;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .site-title {
-      font-size: 1.5rem;
-      margin-top: -150px;
-    }
-
-    .header-image {
-      margin-top: -50px;
-    }
-
-    /* Further reduce decorative images */
-    .cat-image, .shroom-image, .kirby-image, .smiski-image,
-    .cat2-image, .donut-image, .fish-image {
-      display: none;
-    }
-
-    .bellbag-image, .miku-image {
-      width: 80px;
-    }
-  }
 </style>
-
 
