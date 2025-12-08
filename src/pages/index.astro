@@ -124,8 +124,6 @@ import Bunny from "/workspaces/link-tree/src/assets/images/Bunny.png"
 <img src={Shroom.src} alt="Shroom" class="shroom-image" id="shroomImage"/>
 <img src={Psyduck.src} alt="Psyduck" class="psyduck-image" id="psyduckImage"/>
 <img src={Strawberry.src} alt="Strawberry" class="strawberry-image" id="strawberryImage"/>
-<img src=""
-
 
   </footer>
 </Layout>
@@ -218,13 +216,13 @@ import Bunny from "/workspaces/link-tree/src/assets/images/Bunny.png"
     const letters = siteTitle.querySelectorAll('.letter');
     letters.forEach(letter => {
       letter.addEventListener('mouseenter', () => {
-        letter.style.color = '#FF1493';
-        letter.style.transform = 'scale(1.2)';
+        (letter as HTMLElement).style.color = '#FF1493';
+        (letter as HTMLElement).style.transform = 'scale(1.2)';
       });
       
       letter.addEventListener('mouseleave', () => {
-        letter.style.color = '';
-        letter.style.transform = 'scale(1)';
+        (letter as HTMLElement).style.color = '';
+        (letter as HTMLElement).style.transform = 'scale(1)';
       });
     });
   }
@@ -762,12 +760,16 @@ import Bunny from "/workspaces/link-tree/src/assets/images/Bunny.png"
 
   @media (max-width: 480px) {
     .site-title {
-      font-size: 1.5rem;
+      font-size: 1rem;
       margin-top: -150px;
     }
 
     .header-image {
       margin-top: -50px;
+    }
+
+    .site-footer {
+      margin-top: -400px;
     }
 
     /* Further reduce decorative images */
