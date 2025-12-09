@@ -8,7 +8,7 @@ import Cat from "../assets/images/Cat.png";
 import Smiski from "../assets/images/Smiski.png";
 import Kirby from "../assets/images/Kirby.png";
 import Cat2 from "../assets/images/Cat2.png";
-import Duck from "../assets/images/Duck.png";
+
 import Icon from "../assets/images/Icon.png";
 import Face from "../assets/images/Face.png";
 import Donut from "../assets/images/Donut.png";
@@ -133,38 +133,38 @@ import Strawberry from "../assets/images/Strawberry.png";
 
 <script>
   
-  const duckCursor = document.createElement('img');
-  duckCursor.src = '/src/assets/images/Duck.png';
-  duckCursor.style.cssText = `
+  const starCursor = document.createElement('img');
+  starCursor.src = '/src/assets/images/Star.png';
+  starCursor.style.cssText = `
     position: fixed;
-    width: 80px;
+    width: 60px;
     height: auto;
     pointer-events: none;
     z-index: 10000;
-    transform: translate(0, 0);
+    transform: translate(-50%, -50%);
   `;
-  document.body.appendChild(duckCursor);
-  document.body.style.cursor = 'auto';
+  document.body.appendChild(starCursor);
+  document.body.style.cursor = 'none';
 
   let mouseX = 0;
   let mouseY = 0;
-  let duckX = 0;
-  let duckY = 0;
+  let starX = 0;
+  let starY = 0;
 
   document.addEventListener('mousemove', (e) => {
     mouseX = e.clientX;
     mouseY = e.clientY;
   });
 
-  function animateDuck() {
-    duckX += (mouseX - duckX) * 0.15;
-    duckY += (mouseY - duckY) * 0.15;
-    duckCursor.style.left = duckX + 'px';
-    duckCursor.style.top = duckY + 'px';
-    requestAnimationFrame(animateDuck);
+  function animateStar() {
+    starX += (mouseX - starX) * 0.15;
+    starY += (mouseY - starY) * 0.15;
+    starCursor.style.left = starX + 'px';
+    starCursor.style.top = starY + 'px';
+    requestAnimationFrame(animateStar);
   }
 
-  animateDuck();
+  animateStar();
 
   const smiskiImage = document.getElementById('smiskiImage');
   let rotationDegrees = 0;
@@ -716,7 +716,7 @@ import Strawberry from "../assets/images/Strawberry.png";
   }
 
   
-  @media (max-width: 768px) {
+  @media (max-width: 600px) {
     .site-title {
       font-size: 1.3rem;
       margin-top: -150px;
@@ -724,7 +724,31 @@ import Strawberry from "../assets/images/Strawberry.png";
     }
 
     .header-image {
-      margin-top: -80px;
+      margin-top: 0px;
+    }
+
+    .star-image {
+      top: -730px;
+      width: 90px;
+      left: 210px;
+    }
+
+    .diamond-image {
+      top: -730px;
+      width: 100px;
+      left: 300px;
+    }
+
+    .poke-image {
+      top: -720px;
+      width: 70px;
+      left: 400px;
+    }
+
+    .fortnite-image {
+      top: -730px;
+      width: 80px;
+      left: 130px;
     }
 
     
@@ -738,15 +762,19 @@ import Strawberry from "../assets/images/Strawberry.png";
       width: 100px;
     }
 
-    .icon-image, .face-image, .star-image, .diamond-image,
-    .poke-image, .fortnite-image, .psyduck-image, .strawberry-image, .bunny-image {
-      display: none;
-    }
-
-    .donut-image {
+   .face-image{
       width: 150px;
-      right: 50px;
-    }
+      top: -650px;
+      display: flex;
+   }
+   .icon-image{
+      width: 190px;
+      top: -360px;
+      left: 0px;
+      display: flex;
+   }
+
+    
 
     .cat2-image {
       width: 100px;
@@ -754,34 +782,64 @@ import Strawberry from "../assets/images/Strawberry.png";
     }
 
     .fish-image {
-      width: 80px;
+      width: 200px;
+      left: 150px;
+      top: -320px;
+    }
+  
+    .strawberry-image {
+      top: -370px;
+      right: 50px;
+      width: 200px;
+    }
+
+    .donut-image {
+      left: 400px;
+      width: 180px;
+      top: 40px;
+    }
+
+    .shroom-image {
+      left: 70px;
+      width: 200px;
+      top: -10px;
+    }
+
+    .kirby-image {
+      top: -600px;
+      right: 43px;
+    }
+
+    .smiski-image {
+      top: -50px;
+      right: 30px;
+    }
+
+    .cat2-image {
+      top: -80px;
+      right: 230px;
+      width: 150px;
+    }
+
+    .psyduck-image {
+      top: -200px;
+      right: 150px;
+      width: 120px;
+    }
+
+    .bellbag-image {
+      top: 60px;
+      left: 230px;
+      width: 90px;
+    }
+
+    .miku-image {
+      top: 70px;
+      left: 300px;
+      width: 70px;
     }
   }
 
-  @media (max-width: 480px) {
-    .site-title {
-      font-size: 1rem;
-      margin-top: -150px;
-    }
-
-    .header-image {
-      margin-top: -50px;
-    }
-
-    .site-footer {
-      margin-top: -400px;
-    }
-
-    /* Further reduce decorative images */
-    .cat-image, .shroom-image, .kirby-image, .smiski-image,
-    .cat2-image, .donut-image, .fish-image {
-      display: none;
-    }
-
-    .bellbag-image, .miku-image {
-      width: 80px;
-    }
-  }
 </style>
 
 
