@@ -131,10 +131,10 @@ import Strawberry from "../assets/images/Strawberry.png";
 
 <script is:inline src="/scripts/stars.js"></script>
 
-<script>
+<script define:vars={{ starImageSrc: Star.src }}>
   
   const starCursor = document.createElement('img');
-  starCursor.src = '${Star.src}';
+  starCursor.src = starImageSrc;
   starCursor.style.cssText = `
     position: fixed;
     width: 60px;
