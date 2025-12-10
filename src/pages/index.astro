@@ -98,7 +98,7 @@ import Strawberry from "../assets/images/Strawberry.png";
   </svg>
   <img src={Teeth.src} alt="Top Teeth" class="header-image"/>
    <Container>
-    <h1 class="site-title" id="siteTitle"></h1>
+    <h1 class="site-title" id="siteTitle">Maddie's Linktree</h1>
   <LinkGroup/>
   </Container>
   <header class="site-header">
@@ -131,41 +131,7 @@ import Strawberry from "../assets/images/Strawberry.png";
 
 <script is:inline src="/scripts/stars.js"></script>
 
-<script define:vars={{ starImageSrc: Star.src }}>
-  
-  const starCursor = document.createElement('img');
-  starCursor.src = starImageSrc;
-  starCursor.style.cssText = `
-    position: fixed;
-    width: 60px;
-    height: auto;
-    pointer-events: none;
-    z-index: 10000;
-    transform: translate(-50%, -50%);
-  `;
-  document.body.appendChild(starCursor);
-  document.body.style.cursor = 'none';
-
-  let mouseX = 0;
-  let mouseY = 0;
-  let starX = 0;
-  let starY = 0;
-
-  document.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-  });
-
-  function animateStar() {
-    starX += (mouseX - starX) * 0.15;
-    starY += (mouseY - starY) * 0.15;
-    starCursor.style.left = starX + 'px';
-    starCursor.style.top = starY + 'px';
-    requestAnimationFrame(animateStar);
-  }
-
-  animateStar();
-
+<script>
   const smiskiImage = document.getElementById('smiskiImage');
   let rotationDegrees = 0;
   
